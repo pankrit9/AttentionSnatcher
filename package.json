@@ -1,0 +1,20 @@
+{
+  "name": "shapebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankrit9/Shapebook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pankrit9/Shapebook/issues"
+  },
+  "homepage": "https://github.com/pankrit9/Shapebook#readme"
+}
