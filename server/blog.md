@@ -69,3 +69,6 @@ sending to the frontend:
 ## 4. ROUTES
 - handling of the routes (api) calls from the server
 - helps set up the routes and keeps the files organised and clean
+
+### Three routes under user-routes
+
