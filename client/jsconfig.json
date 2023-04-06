@@ -1,4 +1,3 @@
-// what this file does is, now whenever we need to import anything, we can just put the path starting from '/src/'. as in, we can assume we;re already in src. so no need to mention src
 {
     "compilerOptions": {
         "baseUrl": "src"

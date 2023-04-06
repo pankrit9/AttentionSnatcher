@@ -28,7 +28,7 @@
 # Terminal usage
 - started with `npm init -y` after installing the packages and dependencies
 - `nodemon index.js` to run the server
-- 
+-  
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
 # BACKEND NOTES
@@ -106,7 +106,9 @@ sending to the frontend:
 ## run the react app in parant dir for the first time
 - `npx create-react-app client`
 
+------------------------------------------
 ## installing other frontend dependencies
+------------------------------------------
 #### Terminal command:
 `client % npm i react-redux @reduxjs/toolkit redux-persist react-dropzone d
 otenv formik yup react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material`
@@ -120,8 +122,10 @@ otenv formik yup react-router-dom@6 @mui/material @emotion/react @emotion/styled
 - react-router-dom@6: handling react router (different routes and pages)
 - material ui: 
 
-
+------------------------------------------
 # FILES, EXPLAINED
+------------------------------------------
+
 ## /SRC/SCENES
 this is where the layouts for different pages and components is set
 ### index.jsx
@@ -132,3 +136,16 @@ This is where the common(global) components can go
 
 ## SRC/STATE
 redux and toolkit information
+
+## src/theme.js
+contains the color palette for the dark and light themes
+#### How to use the colors from the theme: eg:
+- `palette.neutral.main` if in dark mode gives grey[200], else gives grey[500]
+
+## client/jsconfig.json
+- what this file does is, now whenever we need to import anything, we can just put the path starting from '/src/'. as in, we can assume we;re already in src. so no need to mention src
+
+--------- --------- --------- --------- --------- 
+## client/src/scenes/navbar/index.jsx
+--------- --------- --------- --------- --------- 
+
