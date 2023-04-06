@@ -11,8 +11,28 @@
 - jsonwebtoken: for authentication
 - mongoos: for mongodb access
 
+# ---------------- # ---------------- # ---------------- # ---------------- 
+# DATABASE NOTES
+# ---------------- # ---------------- # ---------------- # ---------------- 
+
+# Database tips
+## if we have any fake data inserted in the db
+- on changing the code, we need to delete (drop) the data from mongodb manually.
+- go to collections and manually remove each set
+- uncomment the fake data inserting lines in sever/index.js 
+
+# ---------------- # ---------------- # ---------------- # ---------------- 
+# RUNNING THE APP
+# ---------------- # ---------------- # ---------------- # ---------------- 
+
 # Terminal usage
-started with `npm init -y` after installing the packages and dependencies
+- started with `npm init -y` after installing the packages and dependencies
+- `nodemon index.js` to run the server
+- 
+
+# ---------------- # ---------------- # ---------------- # ---------------- 
+# BACKEND NOTES
+# ---------------- # ---------------- # ---------------- # ---------------- 
 
 # Definitions
 
@@ -71,4 +91,44 @@ sending to the frontend:
 - helps set up the routes and keeps the files organised and clean
 
 ### Three routes under user-routes
+- get the user
+- get user's friend list
+- update user's friend list by adding/removing friends
 
+# ---------------- # ---------------- # ---------------- # ---------------- 
+# FRONTEND NOTES
+# ---------------- # ---------------- # ---------------- # ---------------- 
+
+# Running the frontend for the first time:
+## install npx
+- `npm i -g npx`
+
+## run the react app in parant dir for the first time
+- `npx create-react-app client`
+
+## installing other frontend dependencies
+#### Terminal command:
+`client % npm i react-redux @reduxjs/toolkit redux-persist react-dropzone d
+otenv formik yup react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material`
+- redux: popular enterprise level state management tool 
+- redux toolkit
+- redux-persist: save to local storage of the browser (no need to register again and again)
+- react-dropzone: handles the file upload and file handling in the frontend, to send to backend
+- dotenv: for environment variables
+- formik: for form handling
+- yup: for validation
+- react-router-dom@6: handling react router (different routes and pages)
+- material ui: 
+
+
+# FILES, EXPLAINED
+## /SRC/SCENES
+this is where the layouts for different pages and components is set
+### index.jsx
+the .jsx represents files containing react components in them
+
+## SRC/COMPONENTS
+This is where the common(global) components can go
+
+## SRC/STATE
+redux and toolkit information
