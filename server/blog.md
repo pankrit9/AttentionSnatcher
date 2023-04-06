@@ -12,6 +12,13 @@
 - mongoos: for mongodb access
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
+# CURRENT ISSUES
+# ---------------- # ---------------- # ---------------- # ---------------- 
+- user.firstName lastName not working in client/src/scenes/navbar
+    - prolly coz haven't signed up on the server
+    - workaround : hard coded the first name and last name so the user functions might not work, till I resolve the sign up issue
+
+# ---------------- # ---------------- # ---------------- # ---------------- 
 # DATABASE NOTES
 # ---------------- # ---------------- # ---------------- # ---------------- 
 
@@ -148,4 +155,7 @@ contains the color palette for the dark and light themes
 --------- --------- --------- --------- --------- 
 ## client/src/scenes/navbar/index.jsx
 --------- --------- --------- --------- --------- 
-
+- contains all the themes (colors for background, dark-mode and the light-mode)
+- covers the code for all sizes of menus, for the desktop screens and for the mobile screens
+- the logo, the search, the buttons in the navbar, etc.
+- one of the bigger components of the application for the frontend side

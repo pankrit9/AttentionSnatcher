@@ -26,7 +26,7 @@ import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
 const Navbar = () => {
-  const [isMobileMenuToggled, setIsMobileMenutoggle] = useState(false); // setIsMobileMenuToggle: to determine if we want to open the mobile menu when it is in the small screens; used to toggle the menu on-off
+  const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false); // setIsMobileMenuToggle: to determine if we want to open the mobile menu when it is in the small screens; used to toggle the menu on-off
   const dispatch = useDispatch(); // to dispatch actions from the reducer
   const navigate = useNavigate();
   const user = useSelector((state) => state.user); // grab the user info
@@ -39,7 +39,8 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = `${user.firstName} ${user.lastName}`;
+  const fullName = 'Pankrit Jindal';
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -116,14 +117,14 @@ const Navbar = () => {
                 <Typography>{fullName}</Typography>
               </MenuItem>
               {/* after clicking on the menuItem, it takes us and logs us out of the page */}
-              <MenuItem onClick={() => dispath(setLogout())}>Log Out</MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
       ) : (
         <IconButton
           // icon button -> flips it
-          onClick={() => setIsMobileMenutoggle(!isMobileMenuToggled)}
+          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
         >
           {/* pops up in the icon of the menu, only when we're in small screens */}
           <Menu />
@@ -146,7 +147,7 @@ const Navbar = () => {
           {/* CLOSE ICON */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
             <IconButton
-              onClick={() => setIsMobileMenutoggle(!isMobileMenuToggled)}
+              onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
             >
               <Close />
             </IconButton>
@@ -196,7 +197,7 @@ const Navbar = () => {
                     <Typography>{fullName}</Typography>
                   </MenuItem>
                   {/* after clicking on the menuItem, it takes us and logs us out of the page */}
-                  <MenuItem onClick={() => dispath(setLogout())}>
+                  <MenuItem onClick={() => dispatch(setLogout())}>
                     Log Out
                   </MenuItem>
                 </Select>
