@@ -159,3 +159,12 @@ contains the color palette for the dark and light themes
 - covers the code for all sizes of menus, for the desktop screens and for the mobile screens
 - the logo, the search, the buttons in the navbar, etc.
 - one of the bigger components of the application for the frontend side
+
+## client/src/scenes/loginPage/Form.jsx
+- This is where the register functionality is handled
+
+- schemas for the validation
+- initialValueRegister for the initial values of the form
+
+- the logic behind what happens any time someone clicks submit is handled by the button type: Submit 
+    - (onSubmit) is run -> which is essentially handleFormSubmit

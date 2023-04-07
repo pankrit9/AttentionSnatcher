@@ -151,62 +151,62 @@ const Navbar = () => {
             >
               <Close />
             </IconButton>
-
-            {/* MENU ITEMS */}
-            <FlexBetween
-              display="flex"
-              flexDirection="column"
-              justifyContent="center"
-              alignItems="center"
-              gap="2rem"
-            >
-              {/* about to use redux to switch modes bw light and dark */}
-              <IconButton onClick={() => dispatch(setMode())}>
-                {/* button for light/dark mode of the website */}
-                {theme.palette.mode === "dark" ? (
-                  <DarkMode sx={{ fontSize: "25px" }} />
-                ) : (
-                  <LightMode sx={{ color: dark, fontSize: "25px" }} />
-                )}
-              </IconButton>
-              <Message sx={{ fontSize: "25px" }} />
-              <Notifications sx={{ fontSize: "25px" }} />
-              <Help sx={{ fontSize: "25px" }} />
-              {/* for the drop down at the top right (can see the user logged in and the logoout button*/}
-              <FormControl variant="standard" value={fullName}>
-                <Select
-                  value={fullName}
-                  sx={{
-                    backgroundColor: neutralLight,
-                    width: "150px",
-                    borderRadius: "0.25rem",
-                    padding: "0.25rem 1rem",
-                    "& .MuiSvgIcon-root:": {
-                      // select within the css class (target a specific class)
-                      pr: "0.25rem",
-                      width: "3rem",
-                    },
-                    "& .MuiSelect-select:focus": {
-                      backgroundColor: neutralLight,
-                    },
-                  }}
-                  input={<InputBase />} // passed an input of inputbase
-                >
-                  <MenuItem value={fullName}>
-                    {/* this is just a button inside a dropdown */}
-                    <Typography>{fullName}</Typography>
-                  </MenuItem>
-                  {/* after clicking on the menuItem, it takes us and logs us out of the page */}
-                  <MenuItem onClick={() => dispatch(setLogout())}>
-                    Log Out
-                  </MenuItem>
-                </Select>
-              </FormControl>
-            </FlexBetween>
           </Box>
+          {/* MENU ITEMS */}
+          <FlexBetween
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            gap="2rem"
+          >
+            {/* about to use redux to switch modes bw light and dark */}
+            <IconButton onClick={() => dispatch(setMode())}>
+              {/* button for light/dark mode of the website */}
+              {theme.palette.mode === "dark" ? (
+                <DarkMode sx={{ fontSize: "25px" }} />
+              ) : (
+                <LightMode sx={{ color: dark, fontSize: "25px" }} />
+              )}
+            </IconButton>
+            <Message sx={{ fontSize: "25px" }} />
+            <Notifications sx={{ fontSize: "25px" }} />
+            <Help sx={{ fontSize: "25px" }} />
+            {/* for the drop down at the top right (can see the user logged in and the logoout button*/}
+            <FormControl variant="standard" value={fullName}>
+              <Select
+                value={fullName}
+                sx={{
+                  backgroundColor: neutralLight,
+                  width: "150px",
+                  borderRadius: "0.25rem",
+                  padding: "0.25rem 1rem",
+                  "& .MuiSvgIcon-root:": {
+                    // select within the css class (target a specific class)
+                    pr: "0.25rem",
+                    width: "3rem",
+                  },
+                  "& .MuiSelect-select:focus": {
+                    backgroundColor: neutralLight,
+                  },
+                }}
+                input={<InputBase />} // passed an input of inputbase
+              >
+                <MenuItem value={fullName}>
+                  {/* this is just a button inside a dropdown */}
+                  <Typography>{fullName}</Typography>
+                </MenuItem>
+                {/* after clicking on the menuItem, it takes us and logs us out of the page */}
+                <MenuItem onClick={() => dispatch(setLogout())}>
+                  Log Out
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </FlexBetween>
         </Box>
-      )}
-    </FlexBetween>
+  )
+}
+    </FlexBetween >
   ); // note: FlexBetween is the reusable component used. Comes with the default properties defined in src/components/FlexBetween
 };
 
