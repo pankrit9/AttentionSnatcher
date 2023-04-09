@@ -2,7 +2,7 @@
 - express: for library
 - body-parses: to process the body
 - bcrypt: for password encryption
-- cors: for cross-origin request
+- cors: for cross-origin request (different ports for clients and server handling)
 - dotenv: for environment variables
 - grids-stream: for file upload
 - multer and multer-gridfs-storage: to upload the files locally
@@ -34,7 +34,7 @@
 
 # Terminal usage
 - started with `npm init -y` after installing the packages and dependencies
-- `nodemon index.js` to run the server
+- `npm run dev` to run the server
 -  
 
 # ---------------- # ---------------- # ---------------- # ---------------- 

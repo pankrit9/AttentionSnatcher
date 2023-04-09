@@ -25,14 +25,31 @@ import { users, posts } from "./data/index.js";
 const __filename = fileURLToPath(import.meta.url);  // only used with type = module (in package.json)
 const __dirname = path.dirname(__filename);     // only used with type = module (in package.json)
 dotenv.config();
+
 const app = express();
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.use(express.json());
-app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"}));
+// app.use(helmet());
+// app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"}));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors)   // invokes the cross-origin resource sharing policies
+// app.use(cors)   // invokes the cross-origin resource sharing policies
 app.use("/assets", express.static(path.join(__dirname, 'public/assets')));  // sets the directory of where we keep our assets (images)
 
 
