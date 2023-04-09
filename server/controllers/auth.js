@@ -12,7 +12,7 @@ export const register = async (req, res) => {
             lastName,
             email,
             password,
-            picturePath,
+            // picturePath,
             friends,
             location,
             occupation
@@ -26,7 +26,7 @@ export const register = async (req, res) => {
             lastName,
             email,
             password: passwordHash,
-            picturePath,
+            // picturePath,
             friends,
             location,
             occupation,
@@ -40,6 +40,7 @@ export const register = async (req, res) => {
         res.status(500).json({ error: err.message })    // if there is an error, frontend gets the error message with the status code of 500
     }
 }
+
 
 /** LOGGING IN */
 export const login = async (req, res) => {

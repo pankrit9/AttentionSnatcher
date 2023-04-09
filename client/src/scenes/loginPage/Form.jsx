@@ -26,7 +26,7 @@ const registerSchema = yup.object().shape({
     password: yup.string().required("required"),
     location: yup.string().required("required"),
     occupation: yup.string().required("required"),
-    picture: yup.string().required("required"),
+    // picture: yup.string().required("required"),
 });
 
 const loginSchema = yup.object().shape({
@@ -44,7 +44,7 @@ const initialValuesRegister = {
     password: "",
     location: "",
     occupation: "",
-    picture: "",
+    // picture: "",
 }
 
 const initialValuesLogin = {
@@ -75,7 +75,7 @@ const Form = () => {
         // loop through each key-value in the values object and append to the form data
             formData.append(value, values[value]);
         }
-        formData.append('picturePath', values.picture.name);    // values.picture.name is the name of the file (from server/public/assets)
+        // formData.append('picturePath', values.picture.name);    // values.picture.name is the name of the file (from server/public/assets)
 
         const savedUserResponse = await fetch(
             // send the form data to the below api call
@@ -126,8 +126,12 @@ const Form = () => {
 
 /** logic behind when the user submits the form */
     const handleFormSubmit = async (values, onSubmitProps) => {
+        console.time("login_time");
         if (isLogin) await login(values, onSubmitProps);    // leave it for the backend
+        console.timeEnd("login_time");
+        console.time("register_time");
         if (isRegister) await register(values, onSubmitProps);
+        console.timeEnd("register_time");
     };
 
     return (
@@ -204,7 +208,7 @@ const Form = () => {
                                     sx={{
                                         gridColumn: "span 4"
                                     }} />
-                                <Box
+                                {/* <Box
                                     gridColumn="span 4"
                                     border={`1px solid ${palette.neutral.medium}`}
                                     borderRadius="5px"
@@ -240,8 +244,8 @@ const Form = () => {
                                                 )}
                                             </Box>
                                         )}
-                                    </Dropzone>
-                                </Box>
+                                    </Dropzone> */}
+                                {/* </Box> */}
                             </>
                         )}
                         
