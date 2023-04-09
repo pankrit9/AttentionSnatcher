@@ -23,6 +23,7 @@ export const authSlice = createSlice({
         },
         setLogin: (state, action) => {
             // action is the argument for the function: both the lines below are just params
+
             state.user = action.payload.user;
             state.token = action.payload.token;
         },

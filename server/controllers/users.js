@@ -45,7 +45,7 @@ export const addRemoveFriend = async (req, res) => {
         if (user.friends.includes(friendId)) {
             // check if the friendId is included in the main user's friends list 
             // if included, remove them
-            user.friends.filter((id) => id !== friendId);   // grab the same array any time the given inequality is true, basically removing when the id != friendId
+            user.friends = user.friends.filter((id) => id !== friendId);   // grab the same array any time the given inequality is true, basically removing when the id != friendId
             friend.friends = friend.friends.filter((id)=> id !== id);   // if the curr id in this friend list and if it is equal, then remove it
         } else {
             // if not included, add to the friendlist using user.<id/friendID>.push
@@ -70,7 +70,6 @@ export const addRemoveFriend = async (req, res) => {
         );
 
         res.status(200).json(formattedFriends);
-        
     } catch (error) {
         res.status(404).json({ message: err.message });
     }

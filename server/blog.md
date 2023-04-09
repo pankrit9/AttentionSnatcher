@@ -90,7 +90,7 @@ sending to the frontend:
 ## 3. ROUTES WITH FILES
 ### in each app.post()
 - route mentioned is hit
-- middleware is used: uploads a picture locally into the public/assetes dir (middleware function)
+- middleware is used: uploads a image locally into the public/assetes dir (middleware function)
 - then the actual logic is hit: register controller (functionality)
 
 ## 4. ROUTES

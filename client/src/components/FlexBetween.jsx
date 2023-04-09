@@ -8,6 +8,6 @@ const FlexBetween = styled(Box) ({  // mui has box components like `Box` used he
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center"
-})
+});
 
 export default FlexBetween;
