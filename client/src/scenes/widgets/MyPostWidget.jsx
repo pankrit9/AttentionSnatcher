@@ -27,18 +27,18 @@ import { setPosts } from "state";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
-  const [isImage, setIsImage] = useState(false); // if there is an image, then we will show the image
-  const [image, setImage] = useState(null); // the image that they drop
-  const [post, setPost] = useState(""); // the actual post content (discription)
+  const [isImage, setIsImage] = useState(false);
+  const [image, setImage] = useState(null);
+  const [post, setPost] = useState("");
   const { palette } = useTheme();
-  const { _id } = useSelector((state) => state.user); // send to the backend to know who is posting the content
-  const token = useSelector((state) => state.token); // to auth the user, call the api
+  const { _id } = useSelector((state) => state.user);
+  const token = useSelector((state) => state.token);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
 
   const handlePost = async () => {
-    const formData = new FormData(); // to send the image to the backend
+    const formData = new FormData();
     formData.append("userId", _id);
     formData.append("description", post);
     if (image) {
@@ -46,18 +46,13 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    // API call
     const response = await fetch(`http://localhost:3001/posts`, {
-      // Send the post info to the backend
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
     });
-
-    const posts = await response.json(); // Backend returned list of posts
-    dispatch(setPosts({ posts })); // Update the posts
-
-    // Reset the states
+    const posts = await response.json();
+    dispatch(setPosts({ posts }));
     setImage(null);
     setPost("");
   };
