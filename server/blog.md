@@ -12,11 +12,19 @@
 - mongoos: for mongodb access
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
-# CURRENT ISSUES
+# CURRENT ISSUES / AGENDAS
 # ---------------- # ---------------- # ---------------- # ---------------- 
 - user.firstName lastName not working in client/src/scenes/navbar
     - prolly coz haven't signed up on the server
     - workaround : hard coded the first name and last name so the user functions might not work, till I resolve the sign up issue
+
+### Additonal Functionalities/Improvements
+- Deploy the App
+- Clean the codebase
+- Display the logged in user's image even when we visit the profile of some other user
+- When we add a new post while on someone's profile, all posts are shown on the profile (like in the usual homepage feed)
+- Add comments on individual posts
+- Connect the python Chat app functionality to this
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
 # DATABASE NOTES
