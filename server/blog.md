@@ -1,4 +1,4 @@
-# packages and modules
+### packages and modules
 - express: for library
 - body-parses: to process the body
 - bcrypt: for password encryption
@@ -28,11 +28,11 @@
 - New posts should show up on top instead of the bottom, check the data structure used.
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
-# DATABASE NOTES
+## DATABASE NOTES
 # ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Database tips
-## if we have any fake data inserted in the db
+## Database tips
+### if we have any fake data inserted in the db
 - on changing the code, we need to delete (drop) the data from mongodb manually.
 - go to collections and manually remove each set
 - uncomment the fake data inserting lines in sever/index.js 
@@ -41,7 +41,7 @@
 # RUNNING THE APP
 # ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Terminal usage
+## Terminal usage
 - started with `npm init -y` after installing the packages and dependencies
 - `npm run dev` to run the server
 -  
@@ -50,16 +50,16 @@
 # BACKEND NOTES
 # ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Definitions
+## Definitions
 
-# FOLDERS AND FILE INFORMATION
+## FOLDERS AND FILE INFORMATION
 
-## .env file
+### .env file
 - contains the information to connect to the mongodb db
 #### NOTE:
 - our frontend will run on port 3000 and backend on port 3001
 
-## controllers folder
+### controllers folder
 ### auth.js file
 - this is where the authentication logic is handled.
 - to encrypt the password and the token work 
@@ -85,28 +85,28 @@ sending to the frontend:
 - contains the path and the routes for every feature (auth feature)
 - NOTE: the register route is not in the routes folder as invoking and using that functionality requires the use of 'upload' variable, which is only present in the index.js
 
-# SECTIONS
-## 1. CONFIGURATIONS
+## SECTIONS
+### 1. CONFIGURATIONS
 - includes all the middleware configurations as well as different package configurations
 - middlware: something that runs in-between requests basically functions that run in-between different things
 
-## 2. FILE STORAGE
+### 2. FILE STORAGE
 - saving the files to the destination mentioned
 - whenver someone uploads a file on our website, it goes to the destination, which is `public/assets` in our case and saves there
-### about multer
+#### about multer
 - can get all the information about the code (multer) from github repo of multer
 
-## 3. ROUTES WITH FILES
-### in each app.post()
+### 3. ROUTES WITH FILES
+#### in each app.post()
 - route mentioned is hit
 - middleware is used: uploads a image locally into the public/assetes dir (middleware function)
 - then the actual logic is hit: register controller (functionality)
 
-## 4. ROUTES
+### 4. ROUTES
 - handling of the routes (api) calls from the server
 - helps set up the routes and keeps the files organised and clean
 
-### Three routes under user-routes
+#### Three routes under user-routes
 - get the user
 - get user's friend list
 - update user's friend list by adding/removing friends
@@ -115,11 +115,11 @@ sending to the frontend:
 # FRONTEND NOTES
 # ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Running the frontend for the first time:
-## install npx
+## Running the frontend for the first time:
+### install npx
 - `npm i -g npx`
 
-## run the react app in parant dir for the first time
+### run the react app in parant dir for the first time
 - `npx create-react-app client`
 
 ------------------------------------------

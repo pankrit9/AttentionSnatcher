@@ -1,37 +1,32 @@
 # AttentionSnatcher
 
-# ---------------- # ---------------- # ---------------- # ---------------- 
-# DATABASE NOTES
-# ---------------- # ---------------- # ---------------- # ---------------- 
+## DATABASE NOTES
 
-# Database tips
-## if we have any fake data inserted in the db
+## Database tips
+### if we have any fake data inserted in the db
 - on changing the code, we need to delete (drop) the data from mongodb manually.
 - go to collections and manually remove each set
 - uncomment the fake data inserting lines in sever/index.js 
 
-# ---------------- # ---------------- # ---------------- # ---------------- 
 # RUNNING THE APP
-# ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Terminal
+## Terminal usage
 - started with `npm init -y` after installing the packages and dependencies
 - `npm run dev` to run the server
+-  
 
-# ---------------- # ---------------- # ---------------- # ---------------- 
 # BACKEND NOTES
-# ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Definitions
+## Definitions
 
-# FOLDERS AND FILE INFORMATION
+## FOLDERS AND FILE INFORMATION
 
-## .env file
+### .env file
 - contains the information to connect to the mongodb db
 #### NOTE:
 - our frontend will run on port 3000 and backend on port 3001
 
-## controllers folder
+### controllers folder
 ### auth.js file
 - this is where the authentication logic is handled.
 - to encrypt the password and the token work 
@@ -57,46 +52,42 @@ sending to the frontend:
 - contains the path and the routes for every feature (auth feature)
 - NOTE: the register route is not in the routes folder as invoking and using that functionality requires the use of 'upload' variable, which is only present in the index.js
 
-# SECTIONS
-## 1. CONFIGURATIONS
+## SECTIONS
+### 1. CONFIGURATIONS
 - includes all the middleware configurations as well as different package configurations
 - middlware: something that runs in-between requests basically functions that run in-between different things
 
-## 2. FILE STORAGE
+### 2. FILE STORAGE
 - saving the files to the destination mentioned
 - whenver someone uploads a file on our website, it goes to the destination, which is `public/assets` in our case and saves there
-### about multer
+#### about multer
 - can get all the information about the code (multer) from github repo of multer
 
-## 3. ROUTES WITH FILES
-### in each app.post()
+### 3. ROUTES WITH FILES
+#### in each app.post()
 - route mentioned is hit
 - middleware is used: uploads a image locally into the public/assetes dir (middleware function)
 - then the actual logic is hit: register controller (functionality)
 
-## 4. ROUTES
+### 4. ROUTES
 - handling of the routes (api) calls from the server
 - helps set up the routes and keeps the files organised and clean
 
-### Three routes under user-routes
+#### Three routes under user-routes
 - get the user
 - get user's friend list
 - update user's friend list by adding/removing friends
 
-# ---------------- # ---------------- # ---------------- # ---------------- 
 # FRONTEND NOTES
-# ---------------- # ---------------- # ---------------- # ---------------- 
 
-# Running the frontend for the first time:
-## install npx
+## Running the frontend for the first time:
+### install npx
 - `npm i -g npx`
 
-## run the react app in parant dir for the first time
+### run the react app in parant dir for the first time
 - `npx create-react-app client`
 
-------------------------------------------
 ## installing other frontend dependencies
-------------------------------------------
 #### Terminal command:
 `client % npm i react-redux @reduxjs/toolkit redux-persist react-dropzone d
 otenv formik yup react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material`
@@ -110,9 +101,7 @@ otenv formik yup react-router-dom@6 @mui/material @emotion/react @emotion/styled
 - react-router-dom@6: handling react router (different routes and pages)
 - material ui: 
 
-------------------------------------------
 # FILES, EXPLAINED
-------------------------------------------
 
 ## /SRC/SCENES
 this is where the layouts for different pages and components is set
@@ -132,10 +121,8 @@ contains the color palette for the dark and light themes
 
 ## client/jsconfig.json
 - what this file does is, now whenever we need to import anything, we can just put the path starting from '/src/'. as in, we can assume we;re already in src. so no need to mention src
-
---------- --------- --------- --------- --------- 
-## client/src/scenes/navbar/index.jsx
---------- --------- --------- --------- --------- 
+ 
+## client/src/scenes/navbar/index.jsx 
 - contains all the themes (colors for background, dark-mode and the light-mode)
 - covers the code for all sizes of menus, for the desktop screens and for the mobile screens
 - the logo, the search, the buttons in the navbar, etc.
