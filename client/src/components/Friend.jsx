@@ -27,6 +27,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const isFriend = friends.length > 0 && friends.some((friend) => friend._id === friendId);
 
     const patchFriend = async () => {
+        if (friendId === _id) return;   // don't add yourself as a friend (this is a bug in the backend
         const response = await fetch(
             `http://localhost:3001/users/${_id}/${friendId}`,
             {

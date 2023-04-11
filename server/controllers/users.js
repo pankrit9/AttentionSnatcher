@@ -19,7 +19,7 @@ export const getUserFriends = async (req, res) => {
 
         const friends = await Promise.all(
             // make multiple API calls to the db
-            user.friends.map((id) => User.findBy(id))     // grab each id that the user has and all the info from each id
+            user.friends.map((id) => User.findById(id))     // grab each id that the user has and all the info from each id
         );
         // make sure can be formatted properly for the frontend
         const formattedFriends = friends.map(
@@ -38,11 +38,12 @@ export const getUserFriends = async (req, res) => {
 export const addRemoveFriend = async (req, res) => {
     try {
         const { id, friendId } = req.params;    // grabbing the ids
-        console.log(`id: ${id}, friendId: ${friendId}`);
         const user = await User.findById(id);
         const friend = await User.findById(friendId);
 
         // facebook same: if one friend removes the other, both are removed from each other's list, one of them adds -> added to both
+        
+        // Already a friend of the user
         if (user.friends.includes(friendId)) {
             // check if the friendId is included in the main user's friends list 
             // if included, remove them
@@ -50,8 +51,11 @@ export const addRemoveFriend = async (req, res) => {
             friend.friends = friend.friends.filter((id)=> id !== id);   // if the curr id in this friend list and if it is equal, then remove it
         } else {
             // if not included, add to the friendlist using user.<id/friendID>.push
-            user.friends.push(friendId);
-            friend.friends.push(id);
+            // make sure user is not trying to add itself as a friend
+            if (id !== friendId) {
+                user.friends.push(friendId);
+                friend.friends.push(id);
+            }
         }
 
         // saving the updated lists 
