@@ -38,6 +38,7 @@ export const getUserFriends = async (req, res) => {
 export const addRemoveFriend = async (req, res) => {
     try {
         const { id, friendId } = req.params;    // grabbing the ids
+        console.log(`id: ${id}, friendId: ${friendId}`);
         const user = await User.findById(id);
         const friend = await User.findById(friendId);
 
@@ -60,7 +61,7 @@ export const addRemoveFriend = async (req, res) => {
         /** formatting, similar to getUserFriends */
         const friends = await Promise.all(
             // make multiple API calls to the db
-            user.friends.map((id) => User.findBy(id))     // grab each id that the user has and all the info from each id
+            user.friends.map((id) => User.findById(id))     // grab each id that the user has and all the info from each id
         );
         // make sure can be formatted properly for the frontend
         const formattedFriends = friends.map(
@@ -70,7 +71,7 @@ export const addRemoveFriend = async (req, res) => {
         );
 
         res.status(200).json(formattedFriends);
-    } catch (error) {
+    } catch (err) {
         res.status(404).json({ message: err.message });
     }
 }

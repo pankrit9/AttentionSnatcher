@@ -41,7 +41,8 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
     return (
         <>
-            {posts.map(
+            {Array.isArray(posts) &&
+                posts.map(
                 // creating a component for each post that we get
                 ({
                     _id,
@@ -68,9 +69,9 @@ const PostsWidget = ({ userId, isProfile = false }) => {
                         comments={comments}
                     />
                 )
-            )};
+            )}
         </>
-    )
+    );
 };
 
 export default PostsWidget;

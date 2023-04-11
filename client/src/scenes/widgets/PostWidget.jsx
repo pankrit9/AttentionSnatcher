@@ -1,17 +1,16 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setPosts } from "state";
-
 import {
-  ChatBubbleOutlined,
-  FavoriteBorderOutlined,
-  FavoriteOutlined,
-  ShareOutlined,
+    ChatBubbleOutlined,
+    FavoriteBorderOutlined,
+    FavoriteOutlined,
+    ShareOutlined,
 } from "@mui/icons-material";
 import { Box, Typography, IconButton, Divider, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setPost } from "state";
 
 // likes = {
 //     // only the users who liked the post will be in this object
@@ -20,7 +19,6 @@ import { useState } from "react";
 // }
 
 const PostWidget = ({
-  key,
   postId,
   postUser_id,
   name,
@@ -52,7 +50,7 @@ const PostWidget = ({
       body: JSON.stringify({ userId: loggedInUserId }), // so backend knows who is liking the post
     });
     const updatedPost = await response.json();
-    dispatch(setPosts({ posts: updatedPost }));
+    dispatch(setPost({ post: updatedPost }));
   };
 
   return (
@@ -66,9 +64,10 @@ const PostWidget = ({
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
+{/* POST PICTURE */}
       {picturePath && (
         <img
-          width="100$"
+          width="100%"
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
@@ -78,7 +77,7 @@ const PostWidget = ({
       <FlexBetween mt="0.25rem">
         <FlexBetween gap="1rem">
           <FlexBetween gap="0.3rem">
-            {/* LIKES BUTTON -> whether someone has liked this or not */}
+{/* LIKES BUTTON -> whether someone has liked this or not */}
             <IconButton onClick={patchLike}>
               {isLiked ? (
                 <FavoriteOutlined sx={{ color: primary }} />
@@ -89,7 +88,7 @@ const PostWidget = ({
             <Typography>{likeCount}</Typography>
           </FlexBetween>
           <FlexBetween gap="0.3rem">
-            {/* COMMENTS BUTTON ->opens the comments section */}
+{/* COMMENTS BUTTON ->opens the comments section */}
             <IconButton onClick={() => setIsComments(!isComments)}>
               <ChatBubbleOutlined />
             </IconButton>
@@ -101,7 +100,7 @@ const PostWidget = ({
           <ShareOutlined />
         </IconButton>
       </FlexBetween>
-      {/* DISPLAY THE ACTUAL COMMENTS */}
+{/* DISPLAY THE ACTUAL COMMENTS */}
       {isComments && (
         <Box mt="0.5rem">
           {comments.map((comment, i) => (
@@ -109,12 +108,13 @@ const PostWidget = ({
               {" "}
               {/* key is the name of the user and the index of the comment */}
               <Divider />
-              <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
+              <Typography sx={{ color: main, m: "0.5rem 0", pl: "10rem" }}>
                 {comment}
               </Typography>
             </Box>
           ))}
           <Divider />
+{/* INPUT: TO ADD NEW COMMENTS */}
         </Box>
       )}
     </WidgetWrapper>

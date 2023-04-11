@@ -57,7 +57,7 @@ export const getUserPosts = async (req, res) => {
 }
 
 /** UPDATE */
-export const likePosts = async (req, res) => {
+export const likePost = async (req, res) => {
     try {
         const { id } = req.params;  // grab the relevant postId (from the query string)
         const { userId } = req.body;    // from req.body as the userId is sent to the body by the frontend this time. ie. comes from the body
