@@ -25,6 +25,7 @@
 - When we add a new post while on someone's profile, all posts are shown on the profile (like in the usual homepage feed)
 - Add comments on individual posts
 - Connect the python Chat app functionality to this
+- New posts should show up on top instead of the bottom, check the data structure used.
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
 # DATABASE NOTES
