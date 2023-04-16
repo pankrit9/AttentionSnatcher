@@ -1,3 +1,6 @@
+# Frontend Deployed on
+https://attention-snatcher.vercel.app
+
 ### packages and modules
 - express: for library
 - body-parses: to process the body
@@ -14,9 +17,6 @@
 # ---------------- # ---------------- # ---------------- # ---------------- 
 # CURRENT ISSUES / AGENDAS
 # ---------------- # ---------------- # ---------------- # ---------------- 
-- user.firstName lastName not working in client/src/scenes/navbar
-    - prolly coz haven't signed up on the server
-    - workaround : hard coded the first name and last name so the user functions might not work, till I resolve the sign up issue
 
 ### Additonal Functionalities/Improvements
 - Deploy the App
@@ -43,7 +43,9 @@
 
 ## Terminal usage
 - started with `npm init -y` after installing the packages and dependencies
+locally:-
 - `npm run dev` to run the server
+- `npm run client` to run the client 
 -  
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
