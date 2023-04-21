@@ -39,7 +39,8 @@ app.use(function (req, res, next) {
 
 app.use(
   cors({
-    origin: "*",
+    // origin: "*",
+    origin: "https://attention-snatcher.vercel.app",
   })
 );
 
