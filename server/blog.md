@@ -1,5 +1,8 @@
-# Frontend Deployed on
+# Frontend Deployed on Vercel
 https://attention-snatcher.vercel.app
+
+# Backend Deployed on Render
+https://attention-snatcher-backend.onrender.com
 
 ### packages and modules
 - express: for library
@@ -51,6 +54,10 @@ locally:-
 # ---------------- # ---------------- # ---------------- # ---------------- 
 # BACKEND NOTES
 # ---------------- # ---------------- # ---------------- # ---------------- 
+
+## Deployment
+- Deployed on Render
+- URL: https://attention-snatcher-backend.onrender.com
 
 ## Definitions
 

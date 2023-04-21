@@ -79,7 +79,8 @@ const Form = () => {
 
         const savedUserResponse = await fetch(
             // send the form data to the below api call
-            "http://localhost:3001/auth/register",
+            // "http://localhost:3001/auth/register",
+            "https://attention-snatcher-backend.onrender.com/auth/register",
             {
                 method: "POST",
                 body: formData,
@@ -102,7 +103,8 @@ const Form = () => {
     const login = async (values, onSubmitProps) => {
         const loggedInResponse = await fetch(
             // send the form data to the below api call
-            "http://localhost:3001/auth/login",
+            // "http://localhost:3001/auth/login",
+            "https://attention-snatcher-backend.onrender.com/auth/login",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

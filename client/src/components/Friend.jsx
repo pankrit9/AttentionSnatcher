@@ -29,7 +29,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const patchFriend = async () => {
         if (friendId === _id) return;   // don't add yourself as a friend (this is a bug in the backend
         const response = await fetch(
-            `http://localhost:3001/users/${_id}/${friendId}`,
+            `https://attention-snatcher-backend.onrender.com/users/${_id}/${friendId}`,
+            // `http://localhost:3001/users/${_id}/${friendId}`,
             {
                 method: "PATCH",
                 headers: {

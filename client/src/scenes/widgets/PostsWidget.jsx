@@ -13,7 +13,9 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     // API 1 = grabs all the posts from anybody (getFeedPosts)
     // API 2 = grabs all the posts from a specific user (getUserPosts)
     const getPosts = async () => {
-        const response = await fetch("http://localhost:3001/posts", {
+        const response = await fetch(
+            // "http://localhost:3001/posts", {
+            "https://attention-snatcher-backend.onrender.com/posts", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -22,7 +24,9 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     };
 
     const getUserPosts = async () => {
-        const response = await fetch(`http://localhost:3001/posts/${userId}/posts`, {
+        const response = await fetch(
+            // `http://localhost:3001/posts/${userId}/posts`, {
+            `https://attention-snatcher-backend.onrender.com/posts/${userId}/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
