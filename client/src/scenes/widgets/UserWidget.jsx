@@ -24,6 +24,7 @@ const UserWidgets = ({ userId, picturePath }) => {
 
     // calling the api to get the user info to display
     const getUser = async () => {
+        // const response = await fetch(`http://localhost:3001/users/${userId}`, {
         const response = await fetch(`https://attention-snatcher-backend.onrender.com/users/${userId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },  // middleware/auth there is Bearer to get the token (verified)
