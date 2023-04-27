@@ -10,6 +10,7 @@ import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_API } from "api";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const dispatch = useDispatch();
@@ -29,8 +30,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const patchFriend = async () => {
         if (friendId === _id) return;   // don't add yourself as a friend (this is a bug in the backend
         const response = await fetch(
-            `https://attention-snatcher-backend.onrender.com/users/${_id}/${friendId}`,
-            // `http://localhost:3001/users/${_id}/${friendId}`,
+            // `https://attention-snatcher-backend.onrender.com/users/${_id}/${friendId}`,
+            `${BACKEND_API}/users/${_id}/${friendId}`,
             {
                 method: "PATCH",
                 headers: {

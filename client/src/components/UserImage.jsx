@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { BACKEND_API } from "api";
 
 const UserImage = ({ image, size = "60px"}) => {
     return (
@@ -10,7 +11,7 @@ const UserImage = ({ image, size = "60px"}) => {
                 height={size}
                 alt="user"
                 // src={`http://localhost:3001/assets/${image}`}
-                src={`https://attention-snatcher-backend.onrender.com/assets/${image}`}
+                src={`${BACKEND_API}/assets/${image}`}
             />
         </Box>
     );
