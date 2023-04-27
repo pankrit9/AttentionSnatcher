@@ -29,6 +29,7 @@ https://attention-snatcher-backend.onrender.com
 - Add comments on individual posts
 - Connect the python Chat app functionality to this
 - New posts should show up on top instead of the bottom, check the data structure used.
+- New posts should have an option to be uploaded with or without an image
 
 # ---------------- # ---------------- # ---------------- # ---------------- 
 ## DATABASE NOTES

@@ -35,11 +35,12 @@ app.use(function (req, res, next) {
   );
   next();
 });
-
+console.log(process.env.FRONTEND_URL)
 app.use(
   cors({
-    origin: "*",
-    // origin: '${process.env.FRONTEND_URL}',
+    // origin: "*",
+    // origin: process.env.FRONTEND_URL,
+    origin: true,
   })
 );
 
