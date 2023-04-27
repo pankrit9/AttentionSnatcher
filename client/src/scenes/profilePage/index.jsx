@@ -7,6 +7,7 @@ import MyPostWidget from "scenes/widgets/MyPostWidget";
 import UserWidget from "scenes/widgets/UserWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import Navbar from "scenes/navbar";
+import { BACKEND_API } from "api";
 
 const ProfilePage = () => {
     const [user, setUser] = useState(null); // keep the local state
@@ -16,8 +17,7 @@ const ProfilePage = () => {
 
     const getUser = async () => {
         const response = await fetch(
-            `http://localhost:3001/users/${userId}`, 
-            // `https://attention-snatcher-backend.onrender.com/users/${userId}`, 
+            `${BACKEND_API}/users/${userId}`, 
             {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },

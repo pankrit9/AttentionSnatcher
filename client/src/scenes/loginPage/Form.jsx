@@ -16,6 +16,7 @@ import { useDispatch } from "react-redux";  // used react-redux to store the use
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
+import { BACKEND_API } from "api";
 
 // creating the validation schema to tell how the form library is going to store the information
 const registerSchema = yup.object().shape({
@@ -79,8 +80,7 @@ const Form = () => {
 
         const savedUserResponse = await fetch(
             // send the form data to the below api call
-            "http://localhost:3001/auth/register",
-            // "https://attention-snatcher-backend.onrender.com/auth/register",
+            `${BACKEND_API}/auth/register`,
             {
                 method: "POST",
                 body: formData,
@@ -103,8 +103,7 @@ const Form = () => {
     const login = async (values, onSubmitProps) => {
         const loggedInResponse = await fetch(
             // send the form data to the below api call
-            "http://localhost:3001/auth/login",
-            // "https://attention-snatcher-backend.onrender.com/auth/login",
+            `${BACKEND_API}/auth/login`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

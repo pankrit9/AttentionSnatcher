@@ -11,6 +11,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setPost } from "state";
+import { BACKEND_API } from "api";
 
 // likes = {
 //     // only the users who liked the post will be in this object
@@ -42,8 +43,7 @@ const PostWidget = ({
 
   const patchLike = async () => {
     const response = await fetch(
-      `http://localhost:3001/posts/${postId}/like`, {
-      // `https://attention-snatcher-backend.onrender.com/posts/${postId}/like`, {
+      `${BACKEND_API}/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -73,8 +73,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://localhost:3001/assets/${picturePath}`}
-          // src={`https://attention-snatcher-backend.onrender.com/assets/${picturePath}`}
+          src={`${BACKEND_API}/assets/${picturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">
