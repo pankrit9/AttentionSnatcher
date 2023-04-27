@@ -12,13 +12,12 @@ const ProfilePage = () => {
     const [user, setUser] = useState(null); // keep the local state
     const { userId } = useParams(); // get the userId from the url
     const token = useSelector((state) => state.token);
-    const thisUser = useSelector((state) => state.user);
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
     const getUser = async () => {
         const response = await fetch(
-            // `http://localhost:3001/users/${userId}`, 
-            `https://attention-snatcher-backend.onrender.com/users/${userId}`, 
+            `http://localhost:3001/users/${userId}`, 
+            // `https://attention-snatcher-backend.onrender.com/users/${userId}`, 
             {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },

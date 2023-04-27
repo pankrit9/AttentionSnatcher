@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import multer from "multer";
-import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -40,19 +39,16 @@ app.use(function (req, res, next) {
 app.use(
   cors({
     origin: "*",
-    // origin: 'https://attention-snatcher.vercel.app',
+    // origin: '${process.env.FRONTEND_URL}',
   })
 );
 
 app.use(express.json());
-// app.use(helmet());
-// app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"}));
-app.use(morgan("common"));
+
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-// app.use(cors)   // invokes the cross-origin resource sharing policies
-app.use("/assets", express.static(path.join(__dirname, 'public/assets')));  // sets the directory of where we keep our assets (images)
 
+app.use("/assets", express.static(path.join(__dirname, 'public/assets')));  // sets the directory of where we keep our assets (images)
 
 /** FILE STORAGE */
 const storage = multer.diskStorage({
@@ -64,14 +60,16 @@ const storage = multer.diskStorage({
         cb(null, file.originalname);
     }
 });
+
 const upload = multer({ storage });     // any time we need to upload a file, use the variable `upload`
+const pictureField = 'picture';
 
 /** ROUTES WITH FILES */
 // route mentioned is hit
-// middleware is used: uploads a picture locally into the public/assetes dir (middleware function)
+// middleware is used: uploads a picture locally into the public/assets dir (middleware function)
 // then the actual logic is hit: register controller (functionality)
-app.post("/auth/register", upload.single("picture"), register);     // this is not in the routes folder, as we need the upload variable to invoke this
-app.post("/posts", verifyToken, upload.single("picture"), createPost); // when we post, need to allow the user to post a picture. setting the property to "picture". `createPost` is a controller. 
+app.post("/auth/register", upload.single(pictureField), register);     // this is not in the routes folder, as we need the upload variable to invoke this
+app.post("/posts", verifyToken, upload.single(pictureField), createPost); // when we post, need to allow the user to post a picture. setting the property to "picture". `createPost` is a controller. 
 
 /** ROUTES */
 app.use("/auth", authRoutes);
