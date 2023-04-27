@@ -1,8 +1,9 @@
 # Frontend Deployed on Vercel
 https://attention-snatcher.vercel.app
 
-# Backend Deployed on Render
-https://attention-snatcher-backend.onrender.com
+# Backend Deployed on Heroku (using Heroku CLI)
+https://attention-snatcher-backend.herokuapp.com/
+
 
 ### packages and modules
 - express: for library
