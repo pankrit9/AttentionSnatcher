@@ -1,6 +1,7 @@
 import { Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
+import { BACKEND_API } from "api";
 
 const AdvertWidget = () => {
   const { palette } = useTheme();
@@ -21,7 +22,7 @@ const AdvertWidget = () => {
         height="auto"
         alt="advert"
         // src="http://localhost:3001/assets/info4.jpeg"
-        src="https://attention-snatcher-backend.onrender.com/assets/info4.jpeg"
+        src={`${BACKEND_API}/assets/info4.jpeg`}
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>

@@ -12,6 +12,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_API } from "api";
 
 const UserWidgets = ({ userId, picturePath }) => {
     const [user, setUser] = useState(null); // grab the user from the backend
@@ -24,8 +25,7 @@ const UserWidgets = ({ userId, picturePath }) => {
 
     // calling the api to get the user info to display
     const getUser = async () => {
-        // const response = await fetch(`http://localhost:3001/users/${userId}`, {
-        const response = await fetch(`https://attention-snatcher-backend.onrender.com/users/${userId}`, {
+        const response = await fetch(`${BACKEND_API}/users/${userId}`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },  // middleware/auth there is Bearer to get the token (verified)
         });
