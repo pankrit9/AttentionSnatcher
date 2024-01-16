@@ -1,5 +1,25 @@
 # AttentionSnatcher
 
+AttentionSnatcher is a full-stack MERN social media platform that provides a space for users to connect, share, and interact online. With its intuitive design and robust feature set, ConnectSphere offers a familiar yet unique social networking experience. 
+
+## Features
+
+- **User Authentication**: Secure and efficient sign-up/login with JWT for session management.
+- **Friendship Management**: Send, accept, and remove friend requests to build your network.
+- **Interactive Feed**: Share posts and view updates with support for text, images, and videos.
+- **Likes and Reactions**: Engage with content through likes and reactions.
+- **Profile Customization**: Personalize your profile with photos, bios, and more.
+- **Dark Mode**: Toggle dark mode for a comfortable viewing experience.
+- **Responsive Design**: A layout that adapts to any device for consistent usability.
+
+## Tech Stack
+
+- **Frontend**: React.js, Material-UI (MUI)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **Hosting**: Cloud-based hosting for high availability
+
 ### DATABASE NOTES
 
 ### Database tips
