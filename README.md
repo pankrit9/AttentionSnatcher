@@ -12,8 +12,8 @@
 
 ### Terminal usage
 - started with `npm init -y` after installing the packages and dependencies
-- `npm run dev` to run the server
--  
+- `nodemon` to run the server (navigate to server dir)
+- `npm run client` to run the client (navigate to client dir)
 
 ## BACKEND NOTES
 
@@ -66,7 +66,7 @@ sending to the frontend:
 #### 3. ROUTES WITH FILES
 ##### in each app.post()
 - route mentioned is hit
-- middleware is used: uploads a image locally into the public/assetes dir (middleware function)
+- middleware is used: uploads an image locally into the public/assetes dir (middleware function)
 - then the actual logic is hit: register controller (functionality)
 
 #### 4. ROUTES
